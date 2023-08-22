@@ -1,0 +1,100 @@
+﻿@model Pharmacy_MVC.Models.Order
+
+@{
+    ViewBag.Title = "ViewOrder";
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+<div class="container-fluid" style="display:flex; justify-content:center; justify-items:center">
+    <h2 class="alert-success">Order Details</h2>
+</div>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    <div style="display:flex; justify-content:center; justify-items:center">
+                        <h2>Order Details</h2>
+                    </div>
+                </th>
+                <th>
+                    <div style="display:flex; justify-content:center; justify-items:center">
+                        <h2>Customer Details</h2>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tr>
+            <td class="center-block">
+                <div style="display:flex; justify-content:center; justify-items:center">
+                    <table>
+                        <tr>
+                            <th>Order Id: </th>
+                            <td>@Model.OrderID</td>
+                        </tr>
+                        <tr>
+                            <th>Product Name: </th>
+                            <td>@Model.Product.ProductName</td>
+
+                        </tr>
+                        <tr>
+                            <th>Manufacturer: </th>
+                            <td>@Model.Product.Manufacturer.ManufacturerName</td>
+                        </tr>
+                        <tr>
+                            <th>Order Date: </th>
+                            <td>@Model.OrderDate</td>
+                        </tr>
+                        <tr>
+                            <th>Order Price: </th>
+                            <td>@Model.OrderPrice</td>
+                        </tr>
+                        <tr>
+                            <th>Order Status: </th>
+                            <td>@Model.OrderStatus</td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td class="center-block">
+                <div style="display:flex; justify-content:center; justify-items:center">
+                    <table>
+                        <tr>
+                            <th>Customer Name: </th>
+                            <td>@Model.User.FirstName @Model.User.LastName</td>
+                        </tr>
+                        <tr>
+                            <th>Address: </th>
+                            <td>@Model.Address.City , @Model.Address.State , @Model.Address.PostalCode</td>
+                        </tr>
+                        <tr>
+                            <th>Contact Details: </th>
+                            <td>@Model.User.Email , @Model.User.MobileNumber</td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+    @if (Model.OrderStatus.Equals("DELIVERED") || Model.OrderStatus.Equals("CANCELED"))
+    {
+        <div style="display:flex; justify-content:center; justify-items:center">
+            <button class="btn btn-success" onclick="location.href='/Orders/AcceptOrder/@Model.OrderID'" disabled>Approve Order</button>
+            &nbsp&nbsp
+            <button class="btn btn-danger" onclick="location.href='/Orders/CancelOrder/@Model.OrderID'" disabled>Cancel Order</button>
+
+        </div>
+    }
+    @if(Model.OrderStatus.Equals("NOT_DELIVERED"))
+    {
+
+    <div style="display:flex; justify-content:center; justify-items:center">
+        <button class="btn btn-success" onclick="location.href='/Orders/AcceptOrder/@Model.OrderID'">Approve Order</button>
+        &nbsp&nbsp
+        <button class="btn btn-danger" onclick="location.href='/Orders/CancelOrder/@Model.OrderID'">Cancel Order</button>
+
+    </div>
+    }
+    <hr />
+</div>
+

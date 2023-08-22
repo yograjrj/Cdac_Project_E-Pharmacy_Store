@@ -1,0 +1,35 @@
+﻿@model Pharmacy_MVC.Models.Product
+
+@{
+    ViewBag.Title = "ViewProduct";
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+<div class="container-fluid" style="display:flex; justify-content:center; justify-items:center"> 
+    <h2>ViewProduct</h2>
+</div>
+
+    <center>
+        <img src="~/Images/med.jpeg" style="border-radius:50%" class="img-responsive" />
+    </center>
+    <br />
+    <table class="table table-striped" style="width:50%; margin-left:400px" >
+        <tr>
+            <td>Product Name:</td>
+            <td>@Model.ProductName</td>
+        </tr>
+        <tr>
+            <td>Category: </td>
+            <td>@Model.Category.CategoryName</td>
+        </tr>
+        <tr>
+            <td>Manufacturer: </td>
+            <td>@Model.Manufacturer.ManufacturerName</td>
+        </tr>
+        <tr>
+            <td>Price: </td>
+            <td>@Model.Price</td>
+        </tr>
+    </table>
+
+

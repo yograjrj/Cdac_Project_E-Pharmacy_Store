@@ -1,0 +1,73 @@
+﻿@model Pharmacy_MVC.Models.CategoryManufacturer
+
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+<div class="jumbotron" style="display:flex; justify-content:center; justify-items:center">
+    <h1 class="modal-title">Add Product</h1>
+</div>
+<div class="container-fluid" style="display:flex; justify-content:center; justify-items:center">
+    <form class="form-group" method="post" action="/Products/AddProduct">
+        <table class="table table-responsive">
+            <tr>
+                <td>Product Name :</td>
+                <td><input class="input-group" type="text" name="productname" placeholder="Product Name" required /></td>
+            </tr>
+            <tr>
+                <td>Description : </td>
+                <td><textarea class="input-group" cols="25" rows="4" name="description" placeholder="Give small description about product." required></textarea></td>
+            </tr>
+            <tr>
+                <td>Mgf. Date: </td>
+                <td><input type="date" class="input-group" name="manufacturingdate" required /></td>
+            </tr>
+            <tr>
+                <td>Expiry Date: </td>
+                <td><input class="input-group" type="date" name="expirydate" required /></td>
+            </tr>
+            <tr>
+                <td>Manufacturar: </td>
+                <td><select name="ManufacturerID" required>
+                    <option>Select</option>
+                      @foreach(var m in Model.ManufacturerList)
+                        {
+                          <option value="@m.ManufacturerID">@m.ManufacturerName</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Price: </td>
+                <td><input class="input-group" type="text" name="price" placeholder="Price" required/></td>
+            </tr>
+            <tr>
+                <td>Category: </td>
+                <td>
+                    <select name="CategoryID" required>
+                        <option>Select</option>
+                        @foreach(var c in Model.CategoryList)
+                            {
+                                <option value="@c.CategoryID">@c.CategoryName</option>
+                            }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Quantity: </td>
+                <td><input class="input-group" type="number" placeholder="Enter Quantity" name="QuantityInStock" required /></td>
+            </tr>
+            <tr>
+                <td>Product Image: </td>
+                <td><input type="file" name="Image" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2"> <input type="submit" class="btn btn-success" value="Add Product" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+

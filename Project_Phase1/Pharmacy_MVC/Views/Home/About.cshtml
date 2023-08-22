@@ -1,0 +1,131 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+<style>
+    .about-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+    }
+
+    .about-card {
+        background-color: #f2f2f2;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        width: 70%;
+    }
+
+    .about-heading {
+        font-size: 48px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .about-subheading {
+        font-size: 24px;
+        color: #555;
+        margin-bottom: 30px;
+    }
+
+    .about-content {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #666;
+    }
+
+    .highlight {
+        background-color: #fff3cd;
+        padding: 5px 10px;
+        border-radius: 4px;
+    }
+
+    .team-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+
+    .team-member {
+        flex: 0 0 calc(25% - 40px);
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+        margin-bottom: 40px;
+    }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 150px;
+            object-fit: fill;
+            border-radius: 20%;
+            margin-bottom: 15px;
+        }
+
+    .team-member-name {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    .team-member-role {
+        font-size: 16px;
+        color: #555;
+    }
+</style>
+
+<div class="container-fluid about-container">
+    <div class="about-card">
+        <div class="about-heading">@ViewBag.Title</div>
+        <div class="about-subheading">Empowering Your Health Journey</div>
+
+        <div class="about-content">
+            <p>Welcome to an exceptional experience in healthcare at our E-pharmacy store!</p>
+
+            <p>Our digital haven is designed to reimagine your healthcare shopping by offering an immersive online platform. With a touch of a button, explore a myriad of health solutions, from vital medicines to wellness essentials. Our mission is to be your partner in enhancing well-being and simplifying healthcare access.</p>
+
+            <p>In our curated collection, you'll find a <span class="highlight">diverse range of products</span> that cater to unique preferences and needs. We've fused convenience with security, ensuring your payments are fortified with the latest technology, paving the way for confident transactions.</p>
+
+            <p>What sets us apart? It's our <span class="highlight">commitment to swift, dependable deliveries</span>. No more waiting rooms or queues. Just the satisfaction of receiving your order, right at your doorstep.</p>
+
+            <p>We're not just an E-pharmacy; we're a <span class="highlight">gateway to accessible healthcare</span>. Seamlessly blending innovation with care, we strive to empower you on your health journey. Join us as we redefine the way you experience wellness.</p>
+
+            <p><span class="highlight">Because health deserves exceptional.</span></p>
+        </div>
+
+        <div class="team-container">
+            <div class="team-member">
+                <img src="~/Images/yograjjadhav.jpg" alt="Profile 1">
+                <div class="team-member-name">Mr. Yograj R. Jadhav</div>
+                <div class="team-member-role">Founder & CEO</div>
+            </div>
+            <div class="team-member">
+                <img src="~/Images/akashrajput.jpg" alt="Profile 2">
+                <div class="team-member-name">Mr. Akash Rajput</div>
+                <div class="team-member-role">Chief Pharmacist</div>
+            </div>
+            <div class="team-member">
+                <img src="~/Images/yograjjadhav.jpg" alt="Profile 3">
+                <div class="team-member-name">Mr. Rupesh Shinde</div>
+                <div class="team-member-role">Head of Operations</div>
+            </div>
+            <div class="team-member">
+                <img src="~/Images/yograjjadhav.jpg" alt="Profile 4">
+                <div class="team-member-name">Mr. Chaitanya Tapase</div>
+                <div class="team-member-role">Customer Care Lead</div>
+            </div>
+        </div>
+    </div>
+ 
+</div>

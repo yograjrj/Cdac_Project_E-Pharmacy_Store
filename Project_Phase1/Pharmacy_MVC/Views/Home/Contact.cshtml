@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+<style>
+    .contact-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+        background-color: #f9f9f9;
+    }
+
+    .contact-card {
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        width: 70%;
+        text-align: center;
+    }
+
+    .contact-heading {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .contact-info {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .contact-details {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+        .contact-details strong {
+            display: block;
+            margin-top: 15px;
+            font-size: 20px;
+        }
+
+        .contact-details a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+            .contact-details a:hover {
+                text-decoration: underline;
+            }
+
+    .map-container {
+        margin-top: 30px;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .map {
+        width: 100%;
+        height: 400px;
+    }
+</style>
+
+<div class="container-fluid contact-container">
+    <div class="contact-card">
+        <div class="contact-heading">@ViewBag.Title</div>
+        <div class="contact-info">@ViewBag.Message</div>
+
+        <div class="contact-details">
+            <div class="mb-3">Visit Us:</div>
+            <div>GetMeds Pharmacy</div>
+            <div>123 Pharma Street, Mumbai</div>
+            <div>Redmond, MH 982369</div>
+
+            <div class="mt-4">Phone: 425.555.0100</div>
+
+            <strong>Email Contacts:</strong>
+            <div class="mt-2"><strong>Support:</strong> <a href="mailto:Support@example.com">getmeds.support.com</a></div>
+            <div><strong>Marketing:</strong> <a href="mailto:Marketing@example.com">getmeds.marketing.com</a></div>
+        </div>
+
+        <div class="map-container mt-4">
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.795317056602!2d72.85420281447987!3d19.075983687097185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce042c961d99%3A0xe5f73a05899c3c3f!2sGetMeds%20Pharmacy!5e0!3m2!1sen!2sus!4v1661931953354!5m2!1sen!2sus" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </div>
+</div>

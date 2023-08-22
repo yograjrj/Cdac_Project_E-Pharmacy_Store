@@ -1,0 +1,69 @@
+﻿@model List<Pharmacy_MVC.Models.Order>
+
+@{
+    ViewBag.Title = "AllOrders";
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+<div class="jumbotron">
+    <h2 class="popover-title">AllOrders</h2>
+</div>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Order Id</th>
+                <th>User Id</th>
+                <th>Address</th>
+                <th>Order Date</th>
+                <th>Order Status</th>
+                <th>View</th>
+                <th>Accept Order</th>
+                <th>Cancel Order</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var o in Model)
+            {
+
+
+                if (o.OrderStatus.Equals("CANCELED") || o.OrderStatus.Equals("DELIVERED"))
+                {
+                    <tr>
+                        <td>@o.OrderID</td>
+                        <td>@o.UserID.</td>
+                        <td>@o.Address.City , @o.Address.State .</td>
+                        <td>@o.OrderDate</td>
+                        <td>@o.OrderStatus</td>
+                        <td><a class="btn btn-success" href="/Orders/viewOrder/@o.OrderID">View</a></td>
+                        <td>
+                            <button class="btn btn-primary" onclick="location.href='/Orders/AcceptOrder/@o.OrderID'" disabled>Accept</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" onclick="window.location.href='/Orders/CancelOrder/@o.OrderID'" disabled>Cancel</button>
+                        </td>
+
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td>@o.OrderID</td>
+                        <td>@o.UserID.</td>
+                        <td>@o.Address.City , @o.Address.State .</td>
+                        <td>@o.OrderDate</td>
+                        <td>@o.OrderStatus</td>
+                        <td><a class="btn btn-success" href="/Orders/viewOrder/@o.OrderID">View</a></td>
+                        <td>
+                            <a class="btn btn-primary" href="/Orders/AcceptOrder/@o.OrderID">Accept</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger" href="/Orders/CancelOrder/@o.OrderID">Cancel</a>
+                        </td>
+
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

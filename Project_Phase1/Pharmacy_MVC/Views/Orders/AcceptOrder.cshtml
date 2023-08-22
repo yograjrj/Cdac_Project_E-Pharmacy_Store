@@ -1,0 +1,34 @@
+﻿@model Pharmacy_MVC.Models.ApproveOrder
+
+@{
+    ViewBag.Title = "AcceptOrders";
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+<div class="container-fluid" style="justify-content:center; justify-items:center; display:flex">
+    <h2 class="popover-title">Accept Orders</h2>
+</div>
+<div class="container" style="justify-content:center; justify-items:center; display:flex">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Delivery Boy Name</th>
+                <th>Mobile No.</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var d in Model.deliveryBoys)
+            {
+                <tr>
+                    <td>@d.FirstName @d.LastName</td>
+                    <td>@d.MobileNumber</td>
+                    <td>@d.Email</td>
+                    <td><a class="btn btn-success" href="/Orders/AssignOrder/@Model.order.OrderID">Assign Order</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,43 @@
+﻿@model Pharmacy_MVC.Models.Order
+
+@{
+    ViewBag.Title = "CancelOrder";
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+<div class="container-fluid" style="display:flex; justify-content:center; justify-items:center">
+    <h2 class="alert-danger">CancelOrder</h2>
+</div>
+<hr />
+<div style="justify-content:center; justify-items:center; display:flex">
+    <form action="/Orders/CancelOrderMsg" method="post">
+        <table class="table table-responsive">
+            <tr>
+                <td colspan="2"></td>
+                <td><h2>Reason for Cancelation: </h2></td>
+            </tr>
+            <tr>
+                <td>Order Id:</td>
+                <td><input type="text" readonly name="OrderId" value="@Model.OrderID" /></td>
+            </tr>
+            <tr>
+                <td>User Id: </td>
+                <td><input type="text" readonly name="UserId" value="@Model.UserID" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td>
+                    <textarea name="Message" rows="4" cols="50"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td>
+                    <input type="submit" value="Cancel Order" class="btn btn-danger" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<hr />
+

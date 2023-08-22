@@ -1,0 +1,50 @@
+﻿@model List<Pharmacy_MVC.Models.Product>
+@{
+    ViewBag.Title = "AllProducts";
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+<div class="jumbotron" style="justify-content:center; justify-items:center; display:flex"><h2>AllProducts</h2></div>
+<div class="container-fluid">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th >Product Id</th>
+                <th>Product Name</th>
+                <th>Product Category</th>
+                <th>Manufacturer</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Mgf. Date</th>
+                <th>Expiray Date</th>
+                <th>Product Image</th>
+                <th>View Product</th>
+                <th>Edit Product</th>
+                <th>Delete Product</th>
+            </tr>
+        </thead>
+                @foreach(Pharmacy_MVC.Models.Product p in Model)
+                {
+                    <tr>
+                        <td>@p.ProductID</td>
+                        <td>@p.ProductName</td>
+                        <td>@p.Category.CategoryName</td>
+                        <td>@p.Manufacturer.ManufacturerName</td>
+                        <td>@p.Description</td>
+                        <td>@p.Price</td>
+                        <td>@p.QuantityInStock</td>
+                        <td>@p.ManufacturingDate</td>
+                        <td>@p.ExpiryDate</td>
+                        <td><img src="~/Images/med.jpeg" style="height:100px; width:100px" /></td>
+                        <td><a class="btn btn-success" href="~/Products/ViewProduct/@p.ProductID">View</a></td>
+                        <td><a class="btn btn-primary" href="~/Products/UpdateProduct/@p.ProductID">Edit</a></td>
+                        <td><a class="btn btn-danger" href="~/Products/DeleteProduct/@p.ProductID">Delete</a></td>
+                    </tr>
+                } 
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,43 @@
+﻿@model List<Pharmacy_MVC.Models.User>
+@{
+    ViewBag.Title = "AllUsers";
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+<div class="jumbotron">
+    <h2 class="popover-title">Manage Users</h2>
+</div>
+<div class="container-fluid" style="justify-content:center; justify-items:center; display:flex">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>User Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Mobile No.</th>
+                <th>Date Of Birth</th>
+                <th>Gender</th>
+                <th>View</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var u in Model)
+            {
+                <tr>
+                    <td>@u.UserID</td>
+                    <td>@u.FirstName</td>
+                    <td>@u.LastName</td>
+                    <td>@u.Email</td>
+                    <td>@u.MobileNumber</td>
+                    <td>@u.DateOfBirth</td>
+                    <td>@u.Gender</td>
+                    <td><a href="/Users/ViewUser/@u.UserID" class="btn btn-success">View</a></td>
+                    <td><a href="/Users/DeleteUser/@u.UserID" class="btn btn-danger">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

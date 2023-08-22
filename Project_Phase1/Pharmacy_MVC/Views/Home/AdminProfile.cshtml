@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "AdminProfile";
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+<div class="container-fluid" style="justify-content:center; justify-items:center; display:flex">
+    <h2 class="alert-success">Admin Profile</h2>
+</div>
+<hr />
+
+<center>
+    <img src="~/Images/user.jpg" style="border-radius:50%; height:200px; width:200px" class="img-responsive" />
+</center>
+<br />
+<table class="table table-striped" style="width:50%; margin-left:400px">
+    <tr>
+        <td>Name:</td>
+        <td>@Model.FirstName @Model.LastName</td>
+    </tr>
+    <tr>
+        <td>Email: </td>
+        <td>@Model.Email</td>
+    </tr>
+    <tr>
+        <td>Mobile No.: </td>
+        <td>@Model.MobileNumber</td>
+    </tr>
+    <tr>
+        <td>Date of Birth: </td>
+        <td>@Model.DateOfBirth</td>
+    </tr>
+    <tr>
+        <td>Gender: </td>
+        <td>@Model.Gender</td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+</table>
+<div class="container-fluid" style="display:flex; justify-content:center; justify-items:center">
+    <a href="/Home/ChangePassword" class="btn btn-primary">Change Password</a>&nbsp;&nbsp;&nbsp;
+    <br />
+    <a href="/Users/AllUsers" class="btn btn-primary">Back</a>
+</div>
+<hr />
+

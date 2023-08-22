@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e9ed6712b0d74e43a5538d2fa7cbf9d2" Name="Diagram1">
+        <EntityTypeShape EntityType="PharmacyModel.Address" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.CancelMessage" Width="1.5" PointX="7.5" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Cart" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Category" Width="1.5" PointX="1.5" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Manufacturer" Width="1.5" PointX="1.5" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Order" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Payment" Width="1.5" PointX="7.5" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Product" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Review" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Table" Width="1.5" PointX="10.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.User" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Wishlist" Width="1.5" PointX="6" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="PharmacyModel.FK__Address__UserID__797309D9" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__Orders__AddressI__3E1D39E1" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__CancelMes__Order__59C55456" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__CancelMes__UserI__57DD0BE4" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__Carts__ProductID__7E37BEF6" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__Carts__UserID__7D439ABD" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__Products__Catego__01142BA1" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__Products__Manufa__03F0984C" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__Orders__ProductI__3F115E1A" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__Orders__UserID__3D2915A8" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__Payments__OrderI__3C34F16F" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__Table__OrderId__503BEA1C" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__Reviews__Product__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__Wishlist__Produc__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__Reviews__UserID__71D1E811" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__Table__UserId__4F47C5E3" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__Wishlist__UserID__75A278F5" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

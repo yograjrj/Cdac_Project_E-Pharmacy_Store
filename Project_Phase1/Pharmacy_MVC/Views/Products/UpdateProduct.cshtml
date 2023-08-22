@@ -1,0 +1,74 @@
+﻿@model Pharmacy_MVC.Models.Product
+
+@{
+    ViewBag.Title = "UpdateProduct";
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+<div class="jumbotron" style="justify-content:center; justify-items:center; display:flex" > 
+    <h2 class="popover-title">Update Product</h2>
+</div>
+
+<div class="container-fluid" style="justify-content:center; justify-items:center; display:flex">
+    <form action="/Products/UpdateProduct" method="post">
+        <table class="table table-responsive">
+            <tr>
+                <td>Product Id: </td>
+                <td><input type="text" readonly name="ProductID" value="@Model.ProductID" required /></td>
+            </tr>
+            <tr>
+                <td>Product Name :</td>
+                <td><input class="input-group" type="text" name="productname" placeholder="Product Name" value="@Model.ProductName" required /></td>
+            </tr>
+            <tr>
+                <td>Description : </td>
+                <td><textarea class="input-group" cols="25" rows="4" name="description" placeholder="Give small description about product." required>@Model.Description</textarea></td>
+            </tr>
+            <tr>
+                <td>Mgf. Date: </td>
+                <td><input type="date" value="@Model.ManufacturingDate" class="input-group" name="manufacturingdate" required /></td>
+            </tr>
+            <tr>
+                <td>Expiry Date: </td>
+                <td><input class="input-group" value="@Model.ExpiryDate" type="date" name="expirydate" /></td>
+            </tr>
+            <tr>
+                <td>Manufacturar: </td>
+                <td>
+                    <select name="ManufacturerID" required>
+                        <option value="1">Cipla</option>
+                        <option value="2">Sun Pharma</option>
+                        <option value="3">Glenmark</option>
+                        <option value="4">Dr. Reddy</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Price: </td>
+                <td><input class="input-group" value="@Model.Price" type="text" name="price" placeholder="Price"  required/></td>
+            </tr>
+            <tr>
+                <td>Category: </td>
+                <td>
+                    <select name="CategoryID" required>
+                        <option value="1">Health Care</option>
+                        <option value="2">Beauty</option>
+                        <option value="3">Wellness</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Quantity: </td>
+                <td><input class="input-group" value="@Model.QuantityInStock" type="number" placeholder="Enter Quantity" name="QuantityInStock" required/></td>
+            </tr>
+            <tr>
+                <td>Product Image: </td>
+                <td><input type="file" name="Image" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2"> <input type="submit" class="btn btn-success" value="Update Product" /></td>
+            </tr>
+        </table>
+    </form>
+</div>

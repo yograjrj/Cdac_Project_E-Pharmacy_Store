@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+    <div class="container">
+        <Center>
+            <div class="jumbotron" style="background-color:aquamarine">
+                <h1> Admin Login</h1>
+            </div>
+
+            <hr />
+            <form method="post" action="/Login/Login">
+                <table class="table table-hover" style="width:50%">
+                    <tr>
+                        <td> Username: </td>
+                        <td>
+                            <input type="text" placeholder=" Enter username" class="input-group" name="username" required />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Password: </td>
+                        <td>
+                            <input type="password" placeholder=" Enter password" class="input-group" name="password" required />
+                        </td>
+                    </tr>
+                    <br />
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" class="btn btn-primary" value="Sign In" /></td>
+                    </tr>
+                </table>
+            </form>
+        </Center>
+    </div>
