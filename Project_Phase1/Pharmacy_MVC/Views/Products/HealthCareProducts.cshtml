@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/Master.cshtml";
 }
 
-<div class="jumbotron" style="justify-content:center; justify-items:center; display:flex"><h2>AllProducts</h2></div>
+<div class="jumbotron" style="justify-content:center; justify-items:center; display:flex"><h2>Health Care Products</h2></div>
 <div class="container-fluid">
     <table class="table table-striped">
         <thead>
@@ -36,7 +36,7 @@
                         <td>@p.QuantityInStock</td>
                         <td>@p.ManufacturingDate</td>
                         <td>@p.ExpiryDate</td>
-                        <td><img src="~/Images/med.jpeg" style="height:100px; width:100px" /></td>
+                        <td><img src="~/Images/med.jpg" style="height:100px; width:100px" /></td>
                         <td><a class="btn btn-success" href="~/Products/ViewProduct/@p.ProductID">View</a></td>
                         <td><a class="btn btn-primary" href="~/Products/UpdateProduct/@p.ProductID">Edit</a></td>
                         <td><a class="btn btn-danger" href="~/Products/DeleteProduct/@p.ProductID">Delete</a></td>

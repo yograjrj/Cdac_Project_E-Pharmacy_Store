@@ -69,3 +69,7 @@ D:\DOT_NET_LAB_EXAM\EXAM_BATCH2\Project_Phase1\Pharmacy_WEB_API\obj\Debug\Pharma
 D:\DOT_NET_LAB_EXAM\EXAM_BATCH2\Project_Phase1\Pharmacy_WEB_API\obj\Debug\Pharmacy_WEB_API.csproj.CopyComplete
 D:\DOT_NET_LAB_EXAM\EXAM_BATCH2\Project_Phase1\Pharmacy_WEB_API\obj\Debug\Pharmacy_WEB_API.dll
 D:\DOT_NET_LAB_EXAM\EXAM_BATCH2\Project_Phase1\Pharmacy_WEB_API\obj\Debug\Pharmacy_WEB_API.pdb
+D:\DOT_NET_LAB_EXAM\EXAM_BATCH2\Project_Phase1\Pharmacy_WEB_API\bin\System.Web.Cors.dll
+D:\DOT_NET_LAB_EXAM\EXAM_BATCH2\Project_Phase1\Pharmacy_WEB_API\bin\System.Web.Http.Cors.dll
+D:\DOT_NET_LAB_EXAM\EXAM_BATCH2\Project_Phase1\Pharmacy_WEB_API\bin\System.Web.Http.Cors.xml
+D:\DOT_NET_LAB_EXAM\EXAM_BATCH2\Project_Phase1\Pharmacy_WEB_API\bin\StarkbankEcdsa.dll

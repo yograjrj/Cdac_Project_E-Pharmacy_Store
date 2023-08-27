@@ -8,8 +8,9 @@ namespace Pharmacy_WEB_API.DTO
 {
     public class CartDetails
     {
-        public Product product { get; set; }
-        public User customer { get; set; }
+        public int productId { get; set; }
+
+        public int customerId { get; set; }
 
         public int quantity { get; set; }
 

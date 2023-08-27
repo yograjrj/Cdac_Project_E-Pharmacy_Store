@@ -7,9 +7,10 @@
 </head>
 
 <body>
+    
     <div class="container-fluid">
         <header class="toast-header ">
-            <div class="card-header" style="background-color:#06885c">
+            <div class="card-header" style="background-color: #3eb9ae">
                 <div class="d-flex justify-content-between align-items-center">
                     <div></div>
                     <div></div>
@@ -21,9 +22,24 @@
                         </div>
                     </div>
                     <div>
-                        <a href="/Login/Login" class="btn btn-primary">Sign In</a>
-                        <a href="/Home/AdminProfile" class="btn btn-success">Profile</a>
-                        <a href="/Login/Logout" class="btn btn-danger">Sign Out</a>
+
+                        @*<a href="/Home/AdminProfile" class="btn btn-success">Profile</a>*@
+                        @{
+                            HttpCookie authCookie = HttpContext.Current.Request.Cookies[FormsAuthentication.FormsCookieName];
+                            if (authCookie == null)
+                            {
+                                <a href="/Login/Login" class="btn btn-primary">Sign In</a>
+                                <a href="/Login/Login" class="btn btn-success">Profile</a>
+                                <button class="btn btn-danger" hidden onclick="location.href='/Login/Logout'">Sign Out</button>
+                            }
+                            else
+                            {
+                                <button class="btn btn-success" hidden onclick="location.href='/Login/Login'">Sign In</button>
+                                <a href="/Home/AdminProfile" class="btn btn-success">Profile</a>
+                                <button class="btn btn-danger" onclick="location.href='/Login/Logout'">Sign Out</button>
+                            }
+                        }
+                        @*<a href="/Login/Logout" class="btn btn-danger">Sign Out</a>*@
                     </div>
                     <div></div>
                     <div></div>
@@ -79,7 +95,7 @@
         <footer class="panel-footer">
             <center>
                 <hr />
-                <div style="height:100px; width:100% ;background-color:#06885c">
+                <div style="height: 100px; width: 100%; background-color: #3eb9ae">
                     <br />
                     <h5>Copyright: getmeds.com, 2023. All rights reserved.</h5>
                 </div>

@@ -7,9 +7,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Pharmacy_WEB_API.Controllers
 {
+    [EnableCors("*", "*", "*")]
     public class CartController : ApiController
     {
         PharmacyEntities db = new PharmacyEntities();
@@ -38,8 +40,8 @@ namespace Pharmacy_WEB_API.Controllers
         public void AddToCart(CartDetails cartItem)
         {
             Cart cart = new Cart();
-            cart.ProductID = cartItem.product.ProductID;
-            cart.UserID = cartItem.customer.UserID;
+            cart.ProductID = cartItem.productId;
+            cart.UserID = cartItem.customerId;
             cart.Quantity = cartItem.quantity;
             cart.AddedDate = DateTime.UtcNow;
             db.Carts.Add(cart);
@@ -50,7 +52,7 @@ namespace Pharmacy_WEB_API.Controllers
         [HttpDelete]
         public void deleteCartItem(CartDetails cartItem)
         {
-            List<Cart> cartItemToDelete = db.Carts.Where(c => c.UserID == cartItem.customer.UserID && c.ProductID == cartItem.product.ProductID).ToList();
+            List<Cart> cartItemToDelete = db.Carts.Where(c => c.UserID == cartItem.customerId && c.ProductID == cartItem.productId).ToList();
             if(cartItemToDelete != null)
             {
                 foreach(var c in cartItemToDelete)
@@ -80,8 +82,11 @@ namespace Pharmacy_WEB_API.Controllers
                 order.OrderStatus = "NOT_DELIVERED";
                 //price += (decimal)order.Product.Price;
                 price = price + (decimal)prod.Price;
+                order.OrderPrice = price.ToString();
+                db.Orders.Add(order);
+                db.SaveChanges();
             }
-            db.Orders.Add(order);
+           
             db.Carts.RemoveRange(cartItems);
             db.SaveChanges();
 

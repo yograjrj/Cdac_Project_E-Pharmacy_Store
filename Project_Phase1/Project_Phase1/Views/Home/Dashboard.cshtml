@@ -1,0 +1,39 @@
+﻿@model List<Project_Phase1.Models.User>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Dashboard</title>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron"><h1 class="alert-primary">Admin Dashboard</h1></div>
+        <hr />
+        <table class="table table-striped">
+            <thead>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Mobile No.</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                @foreach(Project_Phase1.Models.User u in Model)
+                {
+                    <tr>
+                        <td>@u.FirstName</td>
+                        <td>@u.LastName</td>
+                        <td>@u.Email</td>
+                        <td>@u.MobileNumber</td>
+                        <td><a href="/Home/ReviewUser">Validate User</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

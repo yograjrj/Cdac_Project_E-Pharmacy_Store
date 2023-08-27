@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>SignIn</title>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron"> 
+            <h1 class="alert-success"> Admin Login</h1>
+        </div>
+        <hr />
+        <form method="post" action="/Home/SignIn">
+            <table>
+                <tr>
+                    <td> Username: </td>
+                    <td>
+                        <input type="text" placeholder=" Enter username" class="input-group" name="username" />
+                    </td>
+                </tr>
+                <tr>
+                    <td> Password: </td>
+                    <td>
+                        <input type="password" placeholder=" Enter password" class="input-group" name="password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" class="btn btn-primary" value="Sign In" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

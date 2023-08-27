@@ -6,11 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Results;
 
 
 namespace Pharmacy_WEB_API.Controllers
 {
+    [EnableCors("*","*","*")]
     public class CustomersController : ApiController
     {
         PharmacyEntities db = new PharmacyEntities();
@@ -39,6 +41,41 @@ namespace Pharmacy_WEB_API.Controllers
             db.Users.Add(user);
             db.SaveChanges();
 
+        }
+
+        [Route("api/updateprofile/{id}")]
+        [HttpPut]
+        public IHttpActionResult UpdateProfile(int id, User user)
+        {
+            User toUpdate = db.Users.Find(id);
+            toUpdate.FirstName = user.FirstName;
+            toUpdate.LastName = user.LastName;
+            toUpdate.MobileNumber = user.MobileNumber;
+            toUpdate.Email = user.Email;
+            toUpdate.DateOfBirth = user.DateOfBirth;
+            toUpdate.Gender = user.Gender;
+            db.SaveChanges();
+            return Ok(user);
+        }
+
+        [Route("api/changepassword/{id}")]
+        [HttpPut]
+        public IHttpActionResult ChangePassword(int id, ChangePass cp)
+        {
+            try
+            {
+                User user = db.Users.Find(id);
+                if (user.Password.Equals(cp.oldPassword))
+                {
+                    user.Password = cp.newPassword;
+                    db.SaveChanges();
+                    return Ok("Password Changed Successfully..!");
+                }
+                return BadRequest("Old password not matched");
+            }catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
 
         [Route ("api/SignIn")]

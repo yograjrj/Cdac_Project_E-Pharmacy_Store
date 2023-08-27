@@ -9,6 +9,7 @@ namespace Pharmacy_WEB_API
     {
         public static void Register(HttpConfiguration config)
         {
+            config.EnableCors();
             // Web API configuration and services
 
             var json = config.Formatters.JsonFormatter;
